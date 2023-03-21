@@ -1,0 +1,67 @@
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+Make the parent a grid and specify rows and columns
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px;
+  } 
+  
+.item {
+    border: thin solid rgb(0, 255, 191);
+  }
+  
+  /* Children can resize and position themselves */
+ #item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+    align-self: center;
+  } 
+
+header {
+    display: flex;
+    align-items: left;
+}
+
+h1 {
+    font-size: 100px;
+    
+}
+
+.vote-tracker {
+    display: flex;
+    justify-content: stretch;
+}
+
+ul {
+    list-style-type: circle;
+    font-size: 40px;
+    margin: 50px;
+    border-color: deeppink;
+    border: 20px
+}
+
+#images {
+    display: flex;
+    size: 50%;
+  }
+
+section3 {
+    align-items: first baseline;
+    display: flex;
+    padding: 5px;
+    font-size: 20px;
+}
+
+
+footer {
+    text-align: center;
+  }
+
