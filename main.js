@@ -1,8 +1,12 @@
 'use strict';
+
+// array to hold all products
 const products = [];
-let roundsOfVoting = 25;
+let maxRounds = 25;
 let results = document.getElementById('results');
 let chart = null;
+
+// function constructor for products
 function photos(name, source) {
   this.name = name;
   this.timesClicked = 0;
@@ -10,6 +14,7 @@ function photos(name, source) {
   this.source = source;
 }
 
+//  generate object from the img directory
 products.push(new photos('Bag', 'img/bag.jpg'));
 products.push(new photos('Banana', 'img/banana.jpg'));
 products.push(new photos('Bathroom', 'img/bathroom.jpg'));
@@ -30,16 +35,22 @@ products.push(new photos('Unicorn', 'img/unicorn.jpg'));
 products.push(new photos('Water-can', 'img/water-can.jpg'));
 products.push(new photos('Wine-glass', 'img/wine-glass.jpg'));
 
+
+// get element from html
 let imgElp = document.querySelectorAll('img');
 let voteTrackerEl = document.getElementById('vote-tracker');
 let buttonEl = document.getElementById('button');
 const canvasEl = document.getElementById('chart');
+
+
 imgElp[0].src = products[0].source;
 imgElp[0].id = products[0].name;
 imgElp[1].src = products[1].source;
 imgElp[1].id = products[1].name;
 imgElp[2].src = products[2].source;
 imgElp[2].id = products[2].name;
+
+// generate random img number for product array
 function generateRandomimgs() {
   const index = new Set();
   while (index.size < 3) {
@@ -51,6 +62,8 @@ function generateRandomimgs() {
   const uniqueIndex = Array.from(index);
   return uniqueIndex;
 }
+
+// render 3 random imgs
 function renderimgs() {
   let indexes = generateRandomimgs();
   let photos = products[generateRandomimgs()];
@@ -65,6 +78,9 @@ function renderimgs() {
   products[indexes[2]].timesShown++;
 }
 renderimgs();
+
+
+// function to handle event listener on click picture
 function handleClick(event) {
   let productThatWasClicked = event.target.value;
   console.log(productThatWasClicked);
@@ -77,9 +93,9 @@ function handleProductClick(event) {
       image.timesClicked += 1;
     }
   });
-  if (roundsOfVoting) {
+  if (maxRounds) {
     renderimgs();
-    roundsOfVoting--;
+    maxRounds--;
   } else {
     voteTrackerEl.removeEventListener('click', handleProductClick);
     buttonEl.addEventListener('click', renderData);
@@ -87,18 +103,23 @@ function handleProductClick(event) {
     console.log('chart drawn');
   }
 }
+
 voteTrackerEl.addEventListener('click', handleProductClick);
+
+// render data for the results
 function renderData(event) {
   let buttonClicked = event.target.id;
   products.forEach(products => {
     let listItemEl = document.createElement('li');
     let parentContainerEl = document.getElementById('results');
     parentContainerEl.appendChild(listItemEl);
-    listItemEl.textContent = `${products.name} had ${products.timesClicked} votes, and was shown ${products.timesShown} times.`;
+    listItemEl.textContent = `${products.name}: ${products.timesClicked} vote(s) | Shown: ${products.timesShown} time(s).`;
     products.timesClicked;
     products.timesShown;
   });
 }
+
+// code for rendering chart
 let chartObj = document.getElementById('chart').getContext('2d');
 function drawChart() {
   let labels = [];
