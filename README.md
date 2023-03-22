@@ -22,4 +22,4 @@ Collabrated with classmate Kenya Womack and using the help of TA to complete is 
 
 
 ## Lighthouse Report
-![Lighthouse](img/lighthouselab11.jpg)
+![Lighthouse](img/lighthouselab12.jpg)

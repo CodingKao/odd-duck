@@ -5,42 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <link rel="stylesheet" href="reset.css">
+    <link rel="reset" href="reset.css">
     <link rel="stylesheet" href="style.css">
-
-    <title>Odd-Duck</title>
 </head>
+
+
 
 <body>
     <header>
-        <h1>New Product Suvery</h1>
+        <nav>
+            <h1> New Product Survey </h1>
+        </nav>
+        <h2>Pick a Product</h2>
     </header>
- 
-    <main>
-        <h2>Pick A Product</h2>
-    <hr></hr>
-        <section class="vote-tracker" id="grid">
-            <section3 id="images">
-                <img src="" id="image-1">
-                <img src="" id="image-2">
-                <img src="" id="image-3">
-            </section3>
-<hr></hr>
-        </section>
-            
-                 <button type='button' id="ul"> View Results
-            </button>  
-        <div id="trueResults">
-            </div>
-    </main>
- 
-    <br></br>
-    <footer>
-        <p>&copy; Created by Kao Saelor for Code Fellow 2023</p>
-    </footer>
+    <hr>
+    </hr>
 
+    <section>
+
+        <section id="vote-tracker">
+            <img alt="">
+            <img alt="">
+            <img alt="">
+        </section>
+        <section>
+            <p class="information">
+            </p>
+        </section>
+
+        <hr>
+        </hr>
+
+
+        <button id="button" type="button">View Results</button>
+        <p>Results Output:</p>
+        <ul id="results">
+            <!-- <Li></Li> -->
+        </ul>
+    </section>
+    <section id="chartResults">
+
+        <button id="update-chart">Update Chart</button>
+        <canvas id="chart" height="300" width="300"></canvas>
+    </section>
 </body>
-<script src="app.js"></script>
+<footer>
+    <p>
+        &copy; Created by Kao Saelor for Code Fellow 2023
+    </p>
+</footer>
+<script src="main.js"></script>
 
 </html>

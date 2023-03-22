@@ -1,7 +1,12 @@
 'use strict';
 
 const state = [];
-let roundsOfVoting = 5;
+let roundsOfVoting = 25;
+let finalResult = document.getElementById('ul');
+let trueResults = document.getElementById('trueResults');
+console.log(finalResult);
+
+
 
 function Image(name, source) {
   this.name = name;
@@ -11,9 +16,7 @@ function Image(name, source) {
   state.push(this);
 }
 
-let finalResult = document.getElementById('ul');
-let trueResults = document.getElementById('trueResults');
-console.log(finalResult);
+
 function results() {
   let renderResults = document.createElement('ul');
   for (let i = 0; i < state.length; i++) {
