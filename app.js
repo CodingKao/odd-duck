@@ -1,7 +1,7 @@
 'use strict';
 let products = [];
 let previousIndexes = [];
-let roundsOfVoting = 25;
+let maxRounds = 25;
 let results = document.getElementById('results');
 let chart = null;
 function photos(name, source) {
@@ -82,9 +82,9 @@ function handleProductClick(event) {
       image.timesClicked += 1;
     }
   });
-  if (roundsOfVoting) {
+  if (maxRounds) {
     renderImages();
-    roundsOfVoting--;
+    maxRounds--;
   } else {
     voteTrackerEl.removeEventListener('click', handleProductClick);
     buttonEl.addEventListener('click', renderData);
@@ -176,7 +176,7 @@ function updateChart(event) {
 }
 buttonResetEl.addEventListener('click', resetChart);
 function resetChart(event) {
-  roundsOfVoting = 25;
+  maxRounds = 25;
   chart.destroy();
   voteTrackerEl.addEventListener('click', handleProductClick);
 }
