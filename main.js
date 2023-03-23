@@ -5,6 +5,7 @@ const products = [];
 let maxRounds = 25;
 let results = document.getElementById('results');
 let chart = null;
+let previousIndexes = [];
 
 // function constructor for products
 function photos(name, source) {
@@ -35,7 +36,6 @@ products.push(new photos('Unicorn', 'img/unicorn.jpg'));
 products.push(new photos('Water-can', 'img/water-can.jpg'));
 products.push(new photos('Wine-glass', 'img/wine-glass.jpg'));
 
-
 // get element from html
 let imgElp = document.querySelectorAll('img');
 let voteTrackerEl = document.getElementById('vote-tracker');
@@ -55,18 +55,21 @@ function generateRandomimgs() {
   const index = new Set();
   while (index.size < 3) {
     const randomIndex = Math.floor(Math.random() * products.length);
-    if (!index.has(randomIndex)) {
+    if (!index.has(randomIndex) && !previousIndexes.includes(randomIndex)) {
       index.add(randomIndex);
     }
   }
   const uniqueIndex = Array.from(index);
+  previousIndexes = uniqueIndex;
+  console.log(uniqueIndex);
   return uniqueIndex;
 }
 
 // render 3 random imgs
 function renderimgs() {
   let indexes = generateRandomimgs();
-  let photos = products[generateRandomimgs()];
+  // console.log(indexes);
+
   imgElp[0].src = products[indexes[0]].source;
   imgElp[0].id = products[indexes[0]].name;
   products[indexes[0]].timesShown++;
@@ -119,7 +122,7 @@ function renderData(event) {
   });
 }
 
-// code for rendering chart
+// code for rendering
 let chartObj = document.getElementById('chart').getContext('2d');
 function drawChart() {
   let labels = [];
@@ -152,4 +155,42 @@ function drawChart() {
       }
     }
   });
+}
+
+// let value = localStorage.getItem('photos');
+// let Products = localStorage.getItem('photos');
+
+
+function writeData() {
+  localStorage.setItem('photos', JSON.stringify(products));
+}
+
+function readData() {
+  return JSON.parse(localStorage.getItem('photos')) || [];
+}
+
+products = readData();
+console.log(products);
+
+function updateChart(event) {
+  event.preventDefault();
+  console.log(event.target.name);
+  let name = event.target.name.value;
+  let source = event.target.source.value;
+  products.forEach(products => {
+    if (products.name === name) {
+      products.source = source;
+    }
+  });
+  readData();
+  drawChart();
+}
+
+buttonResetEl.addEventListener('click', resetChart);
+function resetChart(event) {
+  roundsOfVoting = 25;
+  chart.destroy();
+  createProducts();
+  renderImages();
+  voteTrackerEl.addEventListener('click', handleProductClick);
 }
