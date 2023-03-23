@@ -174,7 +174,7 @@ console.log(products);
 
 function updateChart(event) {
   event.preventDefault();
-  console.log(event.target.name);
+  // console.log(event.target.name);
   let name = event.target.name.value;
   let source = event.target.source.value;
   products.forEach(products => {

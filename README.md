@@ -15,11 +15,17 @@ The marketing team is not only interested in the total number of clicks, but als
 You are also responsible for the look and feel of the app, so don't forget a custom font, color palette, layout with semantic HTML, and so on.
 
 ## Collaboration
-Collabrated with classmate Kenya Womack and using the help of TA to complete is assignment. 
+
+Collabrated with classmate Kenya Womack and using the help of TA to complete is assignment.
 
 ## Tree
+
 ![Lighthouse](img/lab11-tree.jpg)
 
+## Lighthouse Report lab12
 
-## Lighthouse Report
 ![Lighthouse](img/lighthouselab12.jpg)
+
+## Lighthouse Report lab13
+
+![Lighthouse](img/lighthouselab13.jpg)
