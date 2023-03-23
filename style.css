@@ -2,9 +2,10 @@
     box-sizing: border-box;
   }
 
-body {
+html body {
     width: 90%;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 h1 {
@@ -30,18 +31,16 @@ h2 {
 
 img {
     display: flex;
-    size: 50%;
+    size: 100%;
     justify-content: space-between;
-    width: 500px;
-    height: 547px;
+    width: 425px;
+    height: 500px;
     object-fit: cover;
 }
 
-/* img:hover {
-    box-shadow: inset 100px 0 0 0 red;
-    color: white;
-} */
-
+img:hover {
+    border: darkorange solid;
+}
 
 button {
     justify-content: center;
@@ -54,6 +53,7 @@ hr {
     margin: 25px 0;
     background-color: black;
     justify-content: stretch;
+    width: 100%;
 }
 
 #results {

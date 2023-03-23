@@ -4,6 +4,7 @@ let previousIndexes = [];
 let maxRounds = 25;
 let results = document.getElementById('results');
 let chart = null;
+
 function photos(name, source) {
   this.name = name;
   this.timesClicked = 0;
@@ -100,7 +101,7 @@ function renderData(event) {
     let listItemEl = document.createElement('li');
     let parentContainerEl = document.getElementById('results');
     parentContainerEl.appendChild(listItemEl);
-    listItemEl.textContent = `${products.name} had ${products.timesClicked} votes, and was shown ${products.timesShown} times.`;
+    listItemEl.textContent = `${products.name}: ${products.timesClicked} vote(s) | Shown: ${products.timesShown} time(s).`;
     products.timesClicked;
     products.timesShown;
   });
@@ -161,6 +162,7 @@ function readData() {
 }
 products = readData();
 console.log(products);
+
 function updateChart(event) {
   event.preventDefault();
   console.log(event.target.name);
