@@ -5,52 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Results</title>
-
-    <link rel="reset" href="reset.css">
+    <title>Starter Template</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
     <header>
         <nav>
-            <h1> New Product Survey </h1>
+            <h1>New Product Survey</h1>
         </nav>
-        <h2>Pick a Product</h2>
     </header>
-    <hr></hr>
-    <section>
 
-        <section id="vote-tracker">
-            <img alt="">
-            <img alt="">
-            <img alt="">
-        </section>
-        <section>
-            <p class="information">
-            </p>
+    <main>
+        <section id="votingTracker">
+            <h2>Pick A Product</h2>
+            <ul>
+                <li id="refresh"><a href="index.html">Refresh Page</a></li>
+            </ul>
+            <hr></hr>
+
+            <div id="productImages">
+
+                <div class="container">
+                    <p class="productName"></p>
+                    <img>
+                </div>
+                <div class="container">
+                    <p class="productName"></p>
+                    <img>
+                </div>
+                <div class="container">
+                    <p class="productName"></p>
+                    <img>
+                </div>
+            </div>
         </section>
         <hr></hr>
-        <button id="button" type="button">Click to View Results</button>
-        <p>Results Output:</p>
-        <ul id="results">
-            <!-- <Li></Li> -->
-        </ul>
-    </section>
-    <section id="chartResults">
-        <button id="update-chart">Update Chart</button>
-        <canvas id="chart" height="300" width="300">
-        </canvas>
-    </section>
+<p> Results will show once 25 products has been picked.</p>
+        <section id="results">
+            <button id="showResultBtn" style="text-align: start; margin-bottom: 20px;">Show Results</button>
+            <table id="resultsContainer">
+                <thead>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
+        <section id="chartContainer">
+            <canvas id="canvas" height="400px" width="800px" style="border:1px solid black"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; Created by Kao Saelor for Code Fellow 2023
+        </p>
+    </footer>
 </body>
-<footer>
-    <br></br>
-    <p>
-        &copy; Created by Kao Saelor for Code Fellow 2023
-    </p>
-</footer>
-<script src="app.js"></script>
+
+<script src="main.js"></script>
 
 </html>

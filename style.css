@@ -13,7 +13,7 @@ h1 {
     font-size: 100px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 75px;
 }
 
 h2 {
@@ -23,7 +23,16 @@ h2 {
     text-align: center;
 }
 
-#vote-tracker {
+p {
+    font-size: 30px;
+}
+
+li {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#productImages {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 200px;
     display: flex;
@@ -31,22 +40,16 @@ h2 {
 
 img {
     display: flex;
-    size: 100%;
     justify-content: space-between;
-    width: 425px;
-    height: 500px;
-    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 
 img:hover {
     border: darkorange solid;
 }
 
-button {
-    justify-content: center;
-    margin-top: 25px;
-    font-size: 50px;
-}
+
 
 hr {
     padding: 10px 0;
@@ -60,10 +63,12 @@ hr {
     font-size: 50px;
 }
 
-p {
-    font-size: 30px;
-}
 
+#showResultBtn {
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 50px;
+}
 footer {
     text-align: center;
     font-size: 25px;
