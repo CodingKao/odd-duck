@@ -29,3 +29,8 @@ Collabrated with classmate Kenya Womack and using the help of TA to complete is 
 ## Lighthouse Report lab13
 
 ![Lighthouse](img/lighthouselab13.jpg)
+
+
+## Lighthouse Report lab15b
+
+![Lighthouse](img/lighthouselab15.jpg)
